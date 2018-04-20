@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'maven'
 
 android {
@@ -30,12 +32,14 @@ dependencies {
     api 'fr.vbe.android:base:0.0.1'
 
     api "android.arch.persistence.room:runtime:1.0.0"
+    // Add this in client app
+    kapt "android.arch.persistence.room:compiler:1.0.0"
     annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
 }
 
 
 group = 'fr.vbe.android'
-version = '0.0.1'
+version = '0.0.2'
 
 uploadArchives {
     repositories {
